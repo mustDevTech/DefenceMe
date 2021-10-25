@@ -7,7 +7,7 @@ public class EnemyDamage : MonoBehaviour
 {
     [Header("Place scriptable objects here")]
     [SerializeField] private Stats stats; //Scriptable Obj
-    [SerializeField] private PlayerHealth playerHealthPoint; //Debug
+    [SerializeField] private PlayerHealth playerHealthPoint; //Instance
     private bool canTakeDamage = true;
 
     [Header("Govnokod settings")]
@@ -16,7 +16,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void Awake()
     {
-        playerHealthPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealthPoint = InstancePlayer.instance.GetComponent<PlayerHealth>(); //Get instance Player instead FindGameObjectWithTag
     }
 
     private void OnTriggerStay2D(Collider2D other) //если моб коснулся игрока

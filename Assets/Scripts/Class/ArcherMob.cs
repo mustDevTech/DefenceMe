@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using Mst.UI;
 using Mst.Main;
-using Mst.Simple_Pool_Manager;
 
 public class ArcherMob : EnemyClass
 {
@@ -19,7 +14,6 @@ public class ArcherMob : EnemyClass
     {
         timeNextFire = Time.time;
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
     private void Update()

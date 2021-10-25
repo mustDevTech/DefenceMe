@@ -10,7 +10,8 @@ public class ScoreManager : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private int _scorePoints;
-    [Inject] private CoreManager z_coreManager;
+    [Inject] private CoreManager z_coreManager; //zenjected
+    public static ScoreManager instance;
 
     private int ScorePoints
     {
@@ -23,8 +24,9 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    void Awake()
+    private void Awake()
     {
+        instance = this; // Instance
         scoreText = transform.GetChild(1).GetComponent<Text>();
 
         ScorePoints = 0;
@@ -55,11 +57,11 @@ public class ScoreManager : MonoBehaviour
         UpdateScore();
     }
 
-///<summary>Updates score text UI elements</summary>
+///<summary>Sets score text to UI element</summary>
     private void UpdateScore()
     {
         scoreText.text = ScorePoints.ToString();
-        PlayerPrefs.SetInt("CurrentScore",ScorePoints); //!ОПЦ. Смысл пихать и записывать карент скор
+        PlayerPrefs.SetInt("CurrentScore",ScorePoints); //REMOVE LATER
 
         if(ScorePoints >= PlayerPrefs.GetInt("WinScore"))
         {

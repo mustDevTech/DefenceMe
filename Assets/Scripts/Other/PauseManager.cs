@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.UI;
 
 namespace Mst.UI
 {
@@ -24,6 +25,11 @@ public class PauseManager : MonoBehaviour
 ///<summary>Pause the game</summary>
     public void PauseGame()
     {
+        if(CoreManager.s_gameIsFinished == true)
+        {
+            Button cont = transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<Button>();
+            cont.interactable = false;
+        }
         _pauseContainer.SetActive(true);
         Time.timeScale = 0;
     }
@@ -45,6 +51,8 @@ public class PauseManager : MonoBehaviour
 ///<summary>Returns to main menu </summary>
     public void ToMainMenu()
     {
+        PlayerPrefs.DeleteAll();
+        
         SceneManager.LoadScene("Menu");
         UnPauseGame();
     }

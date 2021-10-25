@@ -19,13 +19,10 @@ public class CountdownTimer : MonoBehaviour
     private void Awake()
     {
         _countdownText = transform.GetChild(1).GetComponent<Text>();
-    }
-    private void Start() 
-    {
         _countdownTimer = _countdownNumber;
         //Debug.Log(z_spawnEnemy);
     }
-
+    
     private void Update()
     {
         CountDownStart();

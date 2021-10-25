@@ -4,9 +4,11 @@ namespace Mst.UI
 {
 public class CoreManager : MonoBehaviour
 {
-    private static GameObject _winGameText;
-    private static GameObject _looseGameText;
+    private GameObject _winGameText;
+    private GameObject _looseGameText;
     [SerializeField] private GameObject _playerGo;
+    
+    public static bool s_gameIsFinished;
 
     private void Awake() 
     {
@@ -16,7 +18,12 @@ public class CoreManager : MonoBehaviour
         _winGameText.SetActive(false);
         _looseGameText.SetActive(false);
 
-        _playerGo = GameObject.Find("Player");
+        s_gameIsFinished = false; 
+    }
+
+    private void Start() 
+    {
+        _playerGo = InstancePlayer.instance.gameObject;
     }
 
     public void SetGameCoreState(bool areWeWon)
@@ -25,11 +32,13 @@ public class CoreManager : MonoBehaviour
         {
             SetFinalGameState(_winGameText,0,Color.green);
             Debug.Log("<color=green>win!!!</color>");
+            s_gameIsFinished = true;
         }
        else
         {
             SetFinalGameState(_looseGameText,0f,Color.red);
             Debug.Log("<color=red>lost!!!</color>");
+            s_gameIsFinished = true;
         }
     }
 

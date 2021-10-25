@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private int _maxHealth = 10;
     [SerializeField] private int _currentHealth;
-    [Inject] private CoreManager _coreManager;
+    [Inject] private CoreManager z_coreManager; //zenjected
 
     [Header("Health bar color")]
     [SerializeField] private Gradient _gradient = null;
@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
             if(_currentHealth <= 0)
             {
                 PlayerPrefs.SetInt("CurrentScore",0); //Обнуляем Действующие (оставить для наглядности). Удалить позже
-                _coreManager.SetGameCoreState(false); // Проигрыш
+                z_coreManager.SetGameCoreState(false); // Проигрыш
             }
 
             if(_currentHealth > _maxHealth)

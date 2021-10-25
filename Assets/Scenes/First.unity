@@ -1185,11 +1185,11 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -1706,7 +1706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &778250050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778250049}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b5f348de8719c440a385e2f67be855a, type: 3}
   m_Name: 
@@ -1884,7 +1884,7 @@ MonoBehaviour:
   - UfoMob_pool
   _randomMobID: 0
   _randomPointID: 0
-  canSpawn: 0
+  canSpawn: 1
 --- !u!114 &849475957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2927,7 +2927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1257660588}
   m_Layer: 0
-  m_Name: Test points
+  m_Name: Heal points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3072,6 +3072,7 @@ GameObject:
   - component: {fileID: 2337887369993840520}
   - component: {fileID: 1301884052}
   - component: {fileID: 1301884053}
+  - component: {fileID: 1301884055}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3212,6 +3213,18 @@ MonoBehaviour:
   _bulletForce: 15
   shotsPerTact: 10
   _objectPoolName: BulletPool
+--- !u!114 &1301884055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301884048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7c9f08397a5e4408f183736d475327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1354297043
 PrefabInstance:
   m_ObjectHideFlags: 0

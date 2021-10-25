@@ -14,9 +14,6 @@ public abstract class EnemyClass : MonoBehaviour
     [SerializeField] protected int maxHealth;
     [SerializeField] protected int _currentHealth;
 
-    [Header("Scores debug")]
-    [SerializeField] protected ScoreManager _scoreManager;
-
 #region Svoistvo
     protected int CurrentHealth
     {
@@ -29,7 +26,7 @@ public abstract class EnemyClass : MonoBehaviour
 
             if(_currentHealth <= 0)
             {
-                _scoreManager.AddScore(1);
+                ScoreManager.instance.AddScore(1);
                 SPManager.instance.DisablePoolObject(this.gameObject);
 
                 _currentHealth = maxHealth;             //обнуление
@@ -46,7 +43,7 @@ public abstract class EnemyClass : MonoBehaviour
         maxHealth = statsSO.enemyHealthPoints *10;
         _currentHealth = maxHealth;
 
-        _scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
+        //_scoreManager = ScoreManager.instance.GetComponent
 
         healthSlider = transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Slider>(); //spaghetti code
         healthSlider.maxValue = maxHealth;

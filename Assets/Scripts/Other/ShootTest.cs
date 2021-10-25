@@ -1,5 +1,4 @@
 using UnityEngine;
-using Mst.Simple_Pool_Manager;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -37,23 +36,16 @@ public class ShootTest : MonoBehaviour
         }
     }
 
-
     ///<summary>Gets enum names and sets spawn points spawn</summary>
     private Vector3 GetEnumAxis(AxisToSpawn axis)
     {
         return vectorAxises[(int)axis];
     }
 
-
     ///<summary>Spawns and shoots powerup items from spawner point</summary>
     private void SpawnAndShoot()
     {
-        //GameObject bullet = SPManager.instance.GetNextAvailablePoolItem(_objectPoolName); //pool instead instantiate
-        //bullet.transform.position = shootPoint.position;
-        //bullet.transform.rotation = shootPoint.rotation;
         GameObject pwerupItem = Instantiate(_itemPrefab,transform.position,transform.rotation);
-
-        //bullet.SetActive(true);
         Rigidbody2D itemRb = pwerupItem.GetComponent<Rigidbody2D>();
         itemRb.AddForce(GetEnumAxis(myAxis) * _itemForce, ForceMode2D.Impulse);
     }

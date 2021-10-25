@@ -11,23 +11,22 @@ public class MoveTowards : MonoBehaviour
      [Header("Debug settings")]
      [SerializeField] private bool _canDebugRayOn = false;
  
-     private void Start() 
+     private void Awake() 
      {
           Player = this.gameObject;
-          targetObject = GameObject.FindGameObjectWithTag("Player");
+          targetObject = InstancePlayer.instance.gameObject;
      }
-     private void Update ()
+     private void FixedUpdate ()
 	{
-         float step = moveSpeed * Time.deltaTime;
+         float step = moveSpeed * Time.fixedDeltaTime;
          Player.transform.position = Vector2.MoveTowards(Player.transform.position, targetObject.transform.position, step);
-	
 	}
 
      private void OnDrawGizmos()
      {
           if (targetObject != null && _canDebugRayOn == true)
           {
-               // Draws a blue line from this transform to the target
+               // Draws a yellow line from this transform to the target
                Gizmos.color = Color.yellow;
                Gizmos.DrawLine(transform.position, targetObject.transform.position);
           }

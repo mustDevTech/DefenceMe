@@ -1,66 +1,90 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-namespace Mst.Main
+namespace Mst.Menu
 {
 public class MenuManager : MonoBehaviour
 {
     [Header("Debug")]
-    [SerializeField] int playerHp;
-    [SerializeField] int playerDm;
-    [Space(20)]
-    [SerializeField] int mobsHp;
-    [SerializeField] int mobsDm;
-    [Space(10)]
-    [SerializeField] int maxWinScore;
+    [SerializeField] private Button startButton;
+    [SerializeField] private ToggleGroup difficultyToggleGroup;
+    [SerializeField] private Difficulties gameDifficulty;
 
+    private enum Difficulties { Easy, Medium, Hard };
 
-    void Awake()
+    private void FixedUpdate()
     {
-        PlayerPrefs.SetInt("PlayerHealth",0);
-        PlayerPrefs.SetInt("PlayerDamage",0);
-
-        PlayerPrefs.SetInt("MobsHealth",0);
-        PlayerPrefs.SetInt("MobsDamage",0);
-
-        PlayerPrefs.SetInt("WinScore",0);
+        if(difficultyToggleGroup.AnyTogglesOn() != true)
+        {
+            startButton.interactable = false;
+        }
+        else
+        { 
+            startButton.interactable = true;
+        }
     }
 
     public void StartGame(string nameLevel)
     {
-        PlayerPrefs.SetInt("PlayerHealth",playerHp);
-        PlayerPrefs.SetInt("PlayerDamage",playerDm);
-
-        PlayerPrefs.SetInt("MobsHealth",mobsHp);
-        PlayerPrefs.SetInt("MobsDamage",mobsDm);
-
-        PlayerPrefs.SetInt("WinScore",maxWinScore);
-
+        AssemblyDifficulty();
         SceneManager.LoadScene(nameLevel);
     }
 
-    public void OnHpChange(string hpPoints)
+
+    #region Difficulty
+    public void SetEasyDifficulty(bool isOn)
     {
-        playerHp = int.Parse(hpPoints);
-    }
-    public void OnDmgChange(string dmgPoints)
-    {
-        playerDm = int.Parse(dmgPoints);
+        if(isOn == true)
+        {
+            gameDifficulty = Difficulties.Easy;
+        }
     }
 
-    public void OnHpEnemy(string hpEnemy)
+    public void SetMediumDifficulty(bool isOn)
     {
-        mobsHp = int.Parse(hpEnemy);
-    }
-    public void OnDmgEnemy(string dmgEnemy)
-    {
-        mobsDm = int.Parse(dmgEnemy);
-    }
-
-    public void OnChangeMaxScore(string maxScore)
-    {
-        maxWinScore = int.Parse(maxScore);
+        if(isOn == true)
+        {
+            gameDifficulty = Difficulties.Medium;
+        }
     }
 
+    public void SetHardDifficulty(bool isOn)
+    {
+        if(isOn == true)
+        {
+            gameDifficulty = Difficulties.Hard;
+        }
+    }
+    #endregion
+
+    #region DifficultuAssemblySettings
+    private void AssemblyDifficulty()
+    {
+        switch (gameDifficulty)
+        {
+            case Difficulties.Easy:
+            CreateSaves(10,2,5,1,10);
+            break;
+            case Difficulties.Medium:
+            CreateSaves(15,1,10,1,20);
+            break;
+            case Difficulties.Hard:
+            CreateSaves(20,1,15,2,25);
+            break;
+        }
+    }
+
+    private void CreateSaves(int hp, int dmg, int mobHp, int mobDmg, int maxScore)
+    {
+        PlayerPrefs.SetInt("PlayerHealth", hp);
+        PlayerPrefs.SetInt("PlayerDamage", dmg);
+
+        PlayerPrefs.SetInt("MobsHealth", mobHp);
+        PlayerPrefs.SetInt("MobsDamage", mobDmg);
+
+        PlayerPrefs.SetInt("WinScore", maxScore);
+    }
+    #endregion
 }
 }
