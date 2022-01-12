@@ -1,24 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mst.UI
-{
 public class CursorChanger : MonoBehaviour
 {
     [SerializeField] private List<Texture2D> _cursorList;
 
-    void Update()
+    private void Update()
     {   
+#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.P))
         {
-            Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
-            Debug.Log("changed cursor");
+            SetDefaultCursor();
         }
         if(Input.GetKeyDown(KeyCode.O))
         {
-            Cursor.SetCursor(_cursorList[Random.Range(0,_cursorList.Count)],new Vector2(15f,15f),CursorMode.Auto);
-            Debug.Log("changed cursor");
+            SetRandomCursor();
         }
+#endif
     }
-}
+    private void OnEnable() => SetRandomCursor();
+    private void OnDisable() => SetDefaultCursor();
+
+    #region PrivateVariables
+    private void SetRandomCursor()
+    {
+        Cursor.SetCursor(_cursorList[Random.Range(0,_cursorList.Count)],new Vector2(15f,15f),CursorMode.Auto);
+    }
+    private void SetDefaultCursor()
+    {
+        Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+    }
+    #endregion
 }

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayableResources
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a582aa86cd30f4249905ecbf425b89f2, type: 3}
+    - {fileID: 2800000, guid: 88f5344e13e43104f9129be9851df8c9, type: 3}
+    - {fileID: 2800000, guid: f15d5294d53543648bc6ff1624b8f812, type: 3}
+    - {fileID: 2800000, guid: 2889547cb78a0624e870e83d21a6971c, type: 3}
+    - {fileID: 2800000, guid: ecf84ccd3e723664485146bdb5e8ad6b, type: 3}
+    - {fileID: 2800000, guid: e0aa43f395dfc0644adf4f162590f885, type: 3}
+    - {fileID: 2800000, guid: eb7a76dffce5c9241b7a68a46beff680, type: 3}
+    - {fileID: 2800000, guid: 7030881a68c7d8146ab2a0ed570c9ed7, type: 3}
+    - {fileID: 2800000, guid: 523ab3e6e86addd4a8b5480de4a4d361, type: 3}
+    - {fileID: 2800000, guid: 3bb684de41e95b74faa4f1f96fa45bfb, type: 3}
+    - {fileID: 2800000, guid: 8e410e518d474184cb045ca75bb8ce49, type: 3}
+    - {fileID: 2800000, guid: ec9aa36c816a09340bc5ff5eca50b6e1, type: 3}
+    - {fileID: 2800000, guid: f87d6e721b5ef09478a3893336404a2f, type: 3}
+    - {fileID: 2800000, guid: 8e6929d741b86e8489e991eddbb68644, type: 3}
+    - {fileID: 2800000, guid: 8d2064ccb16ea4444bea9e86affad3d6, type: 3}
+    - {fileID: 2800000, guid: 1cdff0acd9263fa409684b3afc008653, type: 3}
+    - {fileID: 2800000, guid: 2c4e8886cddca374a82d0bf7ee4d7715, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e0aa43f395dfc0644adf4f162590f885, type: 3}
+  - {fileID: 21300000, guid: f15d5294d53543648bc6ff1624b8f812, type: 3}
+  - {fileID: 21300000, guid: 2c4e8886cddca374a82d0bf7ee4d7715, type: 3}
+  - {fileID: 21300000, guid: a582aa86cd30f4249905ecbf425b89f2, type: 3}
+  - {fileID: 21300000, guid: 523ab3e6e86addd4a8b5480de4a4d361, type: 3}
+  - {fileID: 21300000, guid: 7030881a68c7d8146ab2a0ed570c9ed7, type: 3}
+  - {fileID: 21300000, guid: 2889547cb78a0624e870e83d21a6971c, type: 3}
+  - {fileID: 21300000, guid: ecf84ccd3e723664485146bdb5e8ad6b, type: 3}
+  - {fileID: 21300000, guid: 88f5344e13e43104f9129be9851df8c9, type: 3}
+  - {fileID: 21300000, guid: 3bb684de41e95b74faa4f1f96fa45bfb, type: 3}
+  - {fileID: 21300000, guid: eb7a76dffce5c9241b7a68a46beff680, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Player_mob
+  - Infantry_mob
+  - Pixel
+  - Bomb_mob
+  - hard_icon
+  - ez_icon
+  - Ufo_mob
+  - Shoot_mob
+  - Health_powerup
+  - med_icon
+  - Spawner_mob
+  m_RenderDataMap: {}
+  m_Tag: PlayableResources
+  m_IsVariant: 0

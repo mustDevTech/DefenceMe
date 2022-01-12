@@ -2,8 +2,6 @@
 using UnityEngine;
 using Mst.Simple_Pool_Manager;
 
-namespace Mst.Spawn
-{
 public class SpawnEnemy : MonoBehaviour
 {
     [Header("Lists of spawn prefabs & spawn points")]
@@ -18,15 +16,15 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private int _randomPointID;
 
     [Header("Can we spawn something")]
-    [SerializeField] private bool canSpawn = true; //убрать потом
+    [SerializeField] private bool canSpawn = true; //remove later
 
     ///<summary>Spawn random enemy from random point. Instantiating!</summary>
     public void SpawnMob()
     {
         if(canSpawn == true)
         {
-            _randomMobID = Random.Range(0,_enemyPrefabs.Count); // random enemy spawn
-            _randomPointID = Random.Range(0,_transformSpawnPoints.Count); // random spawn points
+            _randomMobID = Random.Range(0,_enemyPrefabs.Count);
+            _randomPointID = Random.Range(0,_transformSpawnPoints.Count);
         
             GameObject spawnedEnemy = Instantiate(_enemyPrefabs[_randomMobID], _transformSpawnPoints[_randomPointID]);
         }
@@ -37,8 +35,8 @@ public class SpawnEnemy : MonoBehaviour
     {
         if(canSpawn == true)
         {
-            _randomMobID = Random.Range(0,_enemyPrefabs.Count); //generates random enemy spawn from MIN to MAX
-            _randomPointID = Random.Range(0,_transformSpawnPoints.Count); // random spawn points
+            _randomMobID = Random.Range(0,_enemyPrefabs.Count);
+            _randomPointID = Random.Range(0,_transformSpawnPoints.Count);
         
             GameObject newEnemy = SPManager.instance.GetNextAvailablePoolItem(_mobNamesString[_randomMobID]);
             newEnemy.transform.position = _transformSpawnPoints[_randomPointID].position;
@@ -46,8 +44,6 @@ public class SpawnEnemy : MonoBehaviour
             newEnemy.SetActive(true);
         }
     }
-
-
     ///<summary>Spawn certain enemy from certain point</summary>
     public void SpawnCertainMob(int mobId, int spawnerId)
     {
@@ -59,7 +55,7 @@ public class SpawnEnemy : MonoBehaviour
         spawnedCertainEnemy.SetActive(true);
     }
 
-    private void Update() 
+    /*private void Update() 
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -77,6 +73,5 @@ public class SpawnEnemy : MonoBehaviour
         {
             SpawnCertainMob(3,1);
         }
-    }
-}
+    }*/
 }

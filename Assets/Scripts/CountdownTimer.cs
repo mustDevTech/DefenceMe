@@ -1,10 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Mst.Spawn;
 using Zenject;
 
-namespace Mst.UI
-{
 public class CountdownTimer : MonoBehaviour
 {
     [Header("Debug")]
@@ -20,7 +17,6 @@ public class CountdownTimer : MonoBehaviour
     {
         _countdownText = transform.GetChild(1).GetComponent<Text>();
         _countdownTimer = _countdownNumber;
-        //Debug.Log(z_spawnEnemy);
     }
     
     private void Update()
@@ -33,11 +29,9 @@ public class CountdownTimer : MonoBehaviour
             z_spawnEnemy.SpawnNewMob();
         }
     }
-
     private void CountDownStart()
     {
         _countdownText.text = Mathf.FloorToInt(_countdownTimer) + " сек";
         _countdownTimer -= Time.deltaTime;
     }
-}
 }
