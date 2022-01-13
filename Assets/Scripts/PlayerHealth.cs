@@ -56,20 +56,18 @@ public class PlayerHealth : MonoBehaviour
         _gradientFillImage.color = _gradient.Evaluate(1f);
     }
 
-    private void Update() // - + health points [<-->] REMOVE LATER!!!
+    /*private void Update() // - + health points [<-->] REMOVE LATER!!!
     {
         if(Input.GetKeyDown(KeyCode.LeftBracket)) { this.PlayerCurrentHp -=1; }
 
         if(Input.GetKeyDown(KeyCode.RightBracket)) { this.PlayerCurrentHp +=1; }
-    }
-    
+    }*/
 
     ///<summary>Damages player by certain int value</summary>
     public void DamagePlayer(int damagePoints)
     {
         this.PlayerCurrentHp -=damagePoints;
     }
-
 
     ///<summary>Heals player by certain ammount value</summary>
     public void HealPlayer(int healPoints)

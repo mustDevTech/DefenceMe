@@ -7,7 +7,7 @@ public class CursorChanger : MonoBehaviour
 
     private void Update()
     {   
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.P))
         {
             SetDefaultCursor();
@@ -16,7 +16,7 @@ public class CursorChanger : MonoBehaviour
         {
             SetRandomCursor();
         }
-#endif
+//#endif
     }
     private void OnEnable() => SetRandomCursor();
     private void OnDisable() => SetDefaultCursor();

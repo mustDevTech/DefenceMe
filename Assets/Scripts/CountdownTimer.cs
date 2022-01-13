@@ -31,7 +31,7 @@ public class CountdownTimer : MonoBehaviour
     }
     private void CountDownStart()
     {
-        _countdownText.text = Mathf.FloorToInt(_countdownTimer) + " сек";
+        _countdownText.text = Mathf.FloorToInt(_countdownTimer).ToString();
         _countdownTimer -= Time.deltaTime;
     }
 }

@@ -503,7 +503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "0 \u0441\u0435\u043A"
+  m_Text: 0
 --- !u!222 &190836513
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -800,6 +800,7 @@ GameObject:
   - component: {fileID: 348958691}
   - component: {fileID: 348958690}
   - component: {fileID: 348958692}
+  - component: {fileID: 348958693}
   m_Layer: 5
   m_Name: Death
   m_TagString: Untagged
@@ -840,7 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -855,11 +856,11 @@ MonoBehaviour:
     m_MaxSize: 151
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043E\u0440\u0430\u0436\u0435\u043D\u0438\u0435"
+  m_Text: You lost
 --- !u!222 &348958691
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -883,6 +884,22 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &348958693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348958688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 348958690}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 236a5530c9f352c4fbf073db817f534b, type: 2}
+  m_FormatArgs: []
 --- !u!1 &370311397
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +912,7 @@ GameObject:
   - component: {fileID: 370311400}
   - component: {fileID: 370311399}
   - component: {fileID: 370311401}
+  - component: {fileID: 370311402}
   m_Layer: 5
   m_Name: Victory
   m_TagString: Untagged
@@ -935,7 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -950,11 +968,11 @@ MonoBehaviour:
     m_MaxSize: 151
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043E\u0431\u0435\u0434\u0430"
+  m_Text: You win
 --- !u!222 &370311400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -978,6 +996,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &370311402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370311397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 370311399}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: dc7e5274aa4ea3e448ba64bb8056064c, type: 2}
+  m_FormatArgs: []
 --- !u!1 &457222904
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1024,7 @@ GameObject:
   - component: {fileID: 457222907}
   - component: {fileID: 457222906}
   - component: {fileID: 457222908}
+  - component: {fileID: 457222909}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1049,7 +1084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412 \u043C\u0435\u043D\u044E"
+  m_Text: To menu
 --- !u!222 &457222907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1073,6 +1108,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &457222909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457222904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 457222906}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: b61679ed10618b74e8a9ecccc86b20ff, type: 2}
+  m_FormatArgs: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1509,7 @@ GameObject:
   - component: {fileID: 663762138}
   - component: {fileID: 663762137}
   - component: {fileID: 663762139}
+  - component: {fileID: 663762140}
   m_Layer: 5
   m_Name: Pause Text
   m_TagString: Untagged
@@ -1498,7 +1550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1517,7 +1569,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u0410\u0423\u0417\u0410"
+  m_Text: PAUSE
 --- !u!222 &663762138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1541,6 +1593,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &663762140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663762135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 663762137}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 71999a60b1c57834da8c53dcf2ee1514, type: 2}
+  m_FormatArgs: []
 --- !u!1 &742382196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1940,36 @@ Transform:
   m_Father: {fileID: 1091032709}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1007328772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007328774}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007328774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007328772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.947571, y: 4.2437644, z: -63.7801}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027101141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,6 +2184,7 @@ GameObject:
   - component: {fileID: 1147176150}
   - component: {fileID: 1147176149}
   - component: {fileID: 1147176151}
+  - component: {fileID: 1147176152}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2145,7 +2244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_Text: Continue
 --- !u!222 &1147176150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2169,6 +2268,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &1147176152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147176147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1147176149}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 8b606e68def6863479f1253177683fb4, type: 2}
+  m_FormatArgs: []
 --- !u!1 &1165590208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,6 +2889,7 @@ GameObject:
   - component: {fileID: 1548702891}
   - component: {fileID: 1548702894}
   - component: {fileID: 1548702893}
+  - component: {fileID: 1548702895}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -2833,7 +2949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041E\u0447\u043A\u0438 :"
+  m_Text: 'Scores:'
 --- !u!222 &1548702892
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2872,6 +2988,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.8862745}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &1548702895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548702889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1548702891}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 3a2f34f49460895498d88dc08211e3cc, type: 2}
+  m_FormatArgs: []
 --- !u!1 &1573980920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,6 +3209,7 @@ GameObject:
   - component: {fileID: 1696463788}
   - component: {fileID: 1696463787}
   - component: {fileID: 1696463789}
+  - component: {fileID: 1696463790}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3136,7 +3269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0420\u0435\u0441\u0442\u0430\u0440\u0442"
+  m_Text: Restart
 --- !u!222 &1696463788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3160,6 +3293,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &1696463790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696463785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1696463787}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: ec782f4c257760646888653d812e7233, type: 2}
+  m_FormatArgs: []
 --- !u!1 &1766208969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,6 +3413,7 @@ GameObject:
   - component: {fileID: 1816547923}
   - component: {fileID: 1816547922}
   - component: {fileID: 1816547921}
+  - component: {fileID: 1816547925}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -3353,7 +3503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0421\u043F\u0430\u0432\u043D \u0447\u0435\u0440\u0435\u0437 :"
+  m_Text: 'Spawn after :'
 --- !u!222 &1816547924
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3362,6 +3512,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816547919}
   m_CullTransparentMesh: 0
+--- !u!114 &1816547925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816547919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1816547923}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 900a9fd6afac4ba4ab0422155154dd3e, type: 2}
+  m_FormatArgs: []
 --- !u!1 &1821993174
 GameObject:
   m_ObjectHideFlags: 0

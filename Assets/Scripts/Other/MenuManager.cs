@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GameToolkit.Localization;
 
 namespace Mst.Menu
 {
@@ -13,6 +14,16 @@ public class MenuManager : MonoBehaviour
 
     private enum Difficulties { Easy, Medium, Hard };
 
+    private void Start()
+    {
+        if (Application.isPlaying)
+        {
+            //Localization.Instance.SetSystemLanguage();
+            //Localization.Instance.CurrentLanguage = SystemLanguage.English;
+            //Debug.Log("syst lang");
+        }
+    }
+
     private void FixedUpdate()
     {
         if(difficultyToggleGroup.AnyTogglesOn() != true)
@@ -22,6 +33,7 @@ public class MenuManager : MonoBehaviour
         else
         { 
             startButton.interactable = true;
+            
         }
     }
 
@@ -29,6 +41,12 @@ public class MenuManager : MonoBehaviour
     {
         AssemblyDifficulty();
         SceneManager.LoadScene(nameLevel);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("quitting game");
     }
 
 
@@ -85,6 +103,25 @@ public class MenuManager : MonoBehaviour
 
         PlayerPrefs.SetInt("WinScore", maxScore);
     }
+    #endregion
+
+    #region LocalisationButtons
+    public void SetRussianLanguage()
+    {
+        if (Application.isPlaying)
+        {
+            Localization.Instance.CurrentLanguage = SystemLanguage.Russian;
+        }
+        
+    }
+    public void SetEnglishLanguage()
+    {
+        if (Application.isPlaying)
+        {
+            Localization.Instance.CurrentLanguage = SystemLanguage.English;
+        }
+    }
+
     #endregion
 }
 }
